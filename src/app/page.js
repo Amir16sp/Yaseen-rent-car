@@ -1,22 +1,22 @@
-import Image from "next/image";
-import FooterEnd from "./Footer/FooterEnd";
-import VillasRoom from "./Villas/Page";
+// app/page.js
 import BgVedio from "./Vedio/BgVedio";
-import Flowers from "./ShopNow/Flowers";
 import NewArrivals from "./new_arrival/new_arrival";
-import Circle from "./slider/page"
+import CEO from "./Ceo/page";
+import City from "./city/page";
+import Circle from "./slider/page";
+
+// ✅ Only ONE import for FooterEnd
+import FooterEnd from "./Footer/FooterEnd";
+
 export default function Home() {
   return (
     <>
-    <BgVedio /> 
-    <NewArrivals/>
-     <Flowers/>
-      <Circle/>
-     {/* <VillasRoom /> */}
-     
+      <BgVedio />
+      <NewArrivals />
+      <CEO />
+      <City />
+      <Circle />
       <FooterEnd />
- 
-     
     </>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -9,104 +9,65 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const TopNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [expandedMenu, setExpandedMenu] = useState(null);
   const menuRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollPosition(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMobileMenuOpen(false);
-        setExpandedMenu(null);
-      }
-    };
-
-    if (mobileMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [mobileMenuOpen]);
 
   const toggleExpandMobile = (name) => {
     setExpandedMenu((prev) => (prev === name ? null : name));
   };
 
   const items = [
-    { name: "SHOP NOW", link: "/bookshop", color: "text-white" },
+    { name: "BOOK NOW", link: "/bookshop", color: "text-white" },
     { name: "USES", link: "/about", color: "text-white" },
+    { name: "BENEFITS & FEATURES", link: "/age", color: "text-white" },
     {
-      name: "BENEFITS & FEATURES ",
-      link: "/age",
-      color: "text-white",
-     
-    },
-    {
-      name: "BY TYPE",
+      name: "Vehicles",
       link: "#",
       color: "text-white",
       subItems: [
-        { name: "PRODUCT DATA", link: "/story_books" },
-        { name: "SURFACE PREPARATION", link: "/board_books" },
-        { name: "PRIMER COAT", link: "/activity_books" },
-        { name: "Cleaning of Tools", link: "/coth_books_and_sensory_books" },
-        { name: "Colour", link: "/hadith_Seerah_and_islamic_history" },
-        { name: "Coverage & Storage", link: "/hajj_umrah_and_Eid" },
-        { name: "Precaution", link: "/urdu_books" },
-        { name: "Health & Safety", link: "/hardcover" },
+        { name: "Toyota", link: "/story_books" },
+        { name: "Honda", link: "/board_books" },
+        { name: "Suzuki", link: "/activity_books" },
+        { name: "Bus", link: "/coth_books_and_sensory_books" },
+        { name: "Audi A6", link: "/hadith_Seerah_and_islamic_history" },
+        { name: "Range Rover", link: "/hajj_umrah_and_Eid" },
+        { name: "Rolls Royce", link: "/urdu_books" },
+        { name: "Mercedes Maybach", link: "/hardcover" },
       ],
     },
     { name: "Application", link: "/freebies", color: "text-white" },
     { name: "CONTACT US", link: "/contact", color: "text-white" },
   ];
 
-  const navTextColor =
-    scrollPosition > 550 && scrollPosition <= 1300
-      ? "text-black"
-      : "text-black";
-  const blurEffect = scrollPosition > 50? "backdrop-blur-lg bg-[#092b3d]/40" : "";
-
   return (
-    <div className={`fixed top-0 left-0 w-full z-50 ${blurEffect}`}>
-      <div className="px-1 lg:px-16 flex justify-between items-center">
+    <div className="fixed top-0 left-0 w-full z-50 bg-gray-900 h-18 flex items-center">
+      <div className="w-full px-3 lg:px-10 flex justify-between items-center">
         <Link href="/" className="cursor-pointer">
-          <Image src={Logo} alt="Logo" width={140} height={60} />
+          <Image src={Logo} alt="Logo" width={110} height={45} />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className={`hidden md:flex items-center font-light ${navTextColor}`}>
-          <ul className="flex items-center space-x-4">
+        <nav className="hidden md:flex items-center font-light text-white h-full">
+          <ul className="flex items-center space-x-4 h-full">
             {items.map((item) => (
-              <li key={item.name} className="relative px-2 text-lg">
+              <li key={item.name} className="relative px-2 text-base">
                 {item.subItems ? (
                   <div
-                    className="relative group"
+                    className="relative group h-full flex items-center"
                     onMouseEnter={() => setExpandedMenu(item.name)}
                     onMouseLeave={() => setExpandedMenu(null)}
                   >
-                    <div
-                      className={`hover:underline cursor-pointer flex items-center gap-1 ${item.color}`}
-                    >
+                    <div className="hover:underline cursor-pointer flex items-center gap-1">
                       {item.name}
                       <span className="text-xs">▼</span>
                     </div>
                     {expandedMenu === item.name && (
-                      <ul className="absolute left-0 top-full -mt-1 w-48 bg-[#a84618] text-black shadow-lg rounded-md z-50">
+                      <ul className="absolute left-0 top-full -mt-1 w-48 bg-[#a84618] text-white shadow-lg rounded-md z-50">
                         {item.subItems.map((subItem) => (
                           <li key={subItem.name}>
                             <Link
                               href={subItem.link}
-                              className={`block px-4 py-2 hover:bg-[#852b02] ${item.color}`}
+                              className="block px-4 py-2 hover:bg-[#852b02]"
                             >
                               {subItem.name}
                             </Link>
@@ -118,7 +79,7 @@ const TopNav = () => {
                 ) : (
                   <Link
                     href={item.link}
-                    className={`hover:underline transition-all duration-300 font-medium flex items-center gap-1 ${item.color}`}
+                    className="hover:underline transition-all duration-300 font-medium flex items-center gap-1"
                   >
                     {item.name}
                   </Link>
@@ -144,14 +105,13 @@ const TopNav = () => {
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className=" absolute top-7 right-0  w-64 bg-[#b8d680] z-50 shadow-lg p-4"
+                className="absolute top-7 right-0 w-64 bg-[#b8d680] z-50 shadow-lg p-4"
               >
                 <div className="flex justify-between items-center mb-4">
                   <Image src={Logo} alt="Logo" width={80} height={40} />
                   <button
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-2xl text-black
-                    "
+                    className="text-2xl text-black"
                   >
                     ✕
                   </button>
@@ -165,7 +125,7 @@ const TopNav = () => {
                           className="flex justify-between items-center cursor-pointer"
                           onClick={() => toggleExpandMobile(item.name)}
                         >
-                          <span className={`hover:text-yellow-400 ${item.color}`}>
+                          <span className="hover:text-yellow-400">
                             {item.name}
                           </span>
                           {expandedMenu === item.name ? (
@@ -177,7 +137,7 @@ const TopNav = () => {
                       ) : (
                         <Link
                           href={item.link}
-                          className={`block hover:text-yellow-400 transition duration-300 ${item.color}`}
+                          className="block hover:text-yellow-400 transition duration-300"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {item.name}

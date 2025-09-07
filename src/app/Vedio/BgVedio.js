@@ -8,7 +8,7 @@ export default function AnimatedHeroSlider() {
   const slides = [
     {
       id: 0,
-      image: "/images/carone.png",
+      image: "/images/BBB7Oqb.jpg",
       title: " One Way Drop-off Car",
       subtitle: "Rental",
       description: "Going city to city? Book your ride without the hassle of a return. Flexible one-way drop services designed for your convenience.",
@@ -16,7 +16,7 @@ export default function AnimatedHeroSlider() {
     },
     {
       id: 1,
-      image: "/images/cartwo.jpg",
+      image: "/images/Land_Cruiser_300_-_PNG.png",
       title: "Premium City Tours",
       subtitle: "Experience",
       description: "Discover the beauty of urban landscapes with our premium vehicle fleet. Comfortable rides for sightseeing and business trips.",
@@ -24,7 +24,7 @@ export default function AnimatedHeroSlider() {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80",
+      image: "/images/2.png",
       title: "Airport Transfer",
       subtitle: "Service",
       description: "Reliable and punctual airport transfers with professional drivers. Start your journey stress-free with our premium service.",
@@ -42,7 +42,7 @@ export default function AnimatedHeroSlider() {
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gray-700">
+    <div className="min-h-screen relative overflow-hidden bg-[#e9eaed]">
       {/* Background Images with Animation */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
@@ -61,7 +61,7 @@ export default function AnimatedHeroSlider() {
               alt={`Background ${index + 1}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute inset-0 "></div>
           </div>
         ))}
       </div>
@@ -95,14 +95,14 @@ export default function AnimatedHeroSlider() {
             {/* Description with Animation */}
             <p 
               key={`desc-${activeSlide}`}
-              className="text-white/90 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed animate-slide-in-right opacity-90"
+              className="text-white text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed animate-slide-in-right "
             >
               {slides[activeSlide].description}
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-16">
-              <button className="bg-[#ff3e00] hover:bg-orange-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg inline-flex items-center justify-center transition-all transform hover:scale-105 animate-fade-in-up">
+              <button className="bg-[#ff3e00] hover:bg-orange-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg inline-flex items-center justify-center transition-all transform hover:scale-105 animate-fade-in-up">
                 Book A Rental
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </button>

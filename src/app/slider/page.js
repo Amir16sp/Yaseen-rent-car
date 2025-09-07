@@ -5,29 +5,35 @@ import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 
 // Images
-import Once from "../assets/images/heat-proof-paint-for-roof-befor-after-heatproof-in.png";
-import Mekael from "../assets/images/water-proof-paint-for-wall-befor-after-water-proof.png";
-import Your from "../assets/images/fire-proof-paint-for-wall-befor-after-fire-proof-i.png";
-import Jannah from "../assets/images/smoke.png";
-import Maza from "../assets/images/sound--proof--paint-for-home-befor-and-after-in-pa.png";
-import ADAY from "../assets/images/stain-free--paint-for-home-befor-and-after-in-paki.png";
-import OUR from "../assets/images/weather-sheild-coating---paint-for-home-befor-and-.png";
-
+import Once from "../assets/images/1.jpg";
+import Mekael from "../assets/images/3.jpg";
+import Your from "../assets/images/4.jpg";
+import Jannah from "../assets/images/6.jpg";
+import Maza from "../assets/images/5.jpg";
+import ADAY from "../assets/images/7.jpg";
+import MG from "../assets/images/8.jpg";
+import TOYOTA from "../assets/images/9.jpg";
+import Alto from "../assets/images/10.jpg";
+import WEGON from "../assets/images/11.jpg";
+import Sonata from "../assets/images/12.jpg";
 
 const Page = () => {
   const collections = [
-    { age: "Heat Proof", image: Once, alt: "Once " },
-    { age: "Water Proof", image: Mekael, alt: "Mekael" },
-    { age: "Cracks Proof", image: Your, alt: "Your " },
-    { age: "Fire Proof", image: Jannah, alt: "Jannah" },
-    { age: "Sound Proof", image: Maza, alt: "Maza " },
-    { age: "Stain Free", image: ADAY, alt: "ADAY" },
-    { age: "Weather Sheild", image: OUR, alt: "OUR" },
+    { age: "", image: Once, alt: "Once" },
+    { age: "", image: Mekael, alt: "Mekael" },
+    { age: "", image: Your, alt: "Your" },
+    { age: "", image: Jannah, alt: "Jannah" },
+    { age: "", image: Maza, alt: "Maza" },
+    { age: "", image: ADAY, alt: "ADAY" },
+    { age: "", image: MG, alt: "MG" },
+    { age: "", image: WEGON, alt: "WEGON" },
+    { age: "", image: Sonata, alt: "Sonata" },
   ];
-
+   const scrollRef = useRef();
+ 
   const repeatedCollections = [...collections, ...collections];
   const controls = useAnimation();
-  const scrollRef = useRef();
+  
   const [totalWidth, setTotalWidth] = useState(0);
 
   useEffect(() => {
@@ -49,30 +55,32 @@ const Page = () => {
 
   return (
     <div>
-      <div className="h-[85vh] bg-white ">
-        <h2 className="text-3xl font-bold text-center pt-20  text-black drop-shadow-md">
-         ITTEFAQ CONSTRUCTION CHEMICALS & PAINTS
+      <div className="min-h-screen bg-[#e9eaed]">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center pt-10 text-black drop-shadow-md">
+          From Budget to Luxury — Every Car for Every Need
         </h2>
-<h1 className="text-5xl font-bold text-center  pb-20 text-blue-950 drop-shadow-md">7 in 1 Coating</h1>
+        <h1 className="text-3xl sm:text-5xl font-bold text-center pb-10 text-[#ff3e00] drop-shadow-md">
+          Yaseen Rent a Car
+        </h1>
+
         <div className="relative overflow-hidden" ref={scrollRef}>
-          <motion.div animate={controls} className="flex gap-1 px-10 py-4">
+          <motion.div animate={controls} className="flex gap-4 sm:gap-6 px-4 sm:px-10 py-4">
             {repeatedCollections.map((collection, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[400px]"
+                className="flex-shrink-0 w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96"
               >
                 <div className="flex flex-col">
-                  <div className="rounded-full p-1 mb-3 overflow-hidden w-48 h-48 mx-auto relative flex items-center justify-center bg-white shadow-md">
+                  {/* ✅ responsive box without overflow */}
+                  <div className="relative w-full h-40 sm:h-52 md:h-60 lg:h-64 overflow-hidden rounded-lg shadow-md">
                     <Image
                       src={collection.image}
                       alt={collection.alt}
                       fill
-                      style={{ objectFit: "cover" }}
-                      className="rounded-full"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-center"
                     />
                   </div>
-                  <p className="text-xl font-medium text-center ">
+                  <p className="text-base sm:text-lg font-medium text-center mt-2">
                     {collection.age}
                   </p>
                 </div>

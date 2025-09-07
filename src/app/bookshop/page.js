@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import bgImageDesktop from "../assets/images/pakistan-beutiful-home-paints--name-ittefaq-constr.jpg";
-import bgImageMobile from "../assets/images/pakistan-beutiful-home-paints--name-ittefaq-constr.jpg";
+import bgImageDesktop from "../assets/images/Screenshot+2025-01-12+at+4.50.57+pm.webp";
+import bgImageMobile from "../assets/images/Screenshot+2025-01-12+at+4.50.57+pm.webp";
 
 import AllProduct from './AllProduct';
 import Flowers from '../ShopNow/Flowers';
@@ -29,10 +29,10 @@ const textAnimation = {
 };
 
 const bookshopTitle = [
-  { char: "S", color: "text-white-300" },
-  { char: "H", color: "text-white-300" },
+  { char: "B", color: "text-white-300" },
   { char: "O", color: "text-white-300" },
-  { char: "P", color: "text-white-300" },
+  { char: "O", color: "text-white-300" },
+  { char: "K", color: "text-white-300" },
   { char: " ", color: "" },
   { char: "N", color: "text-white-300" },
   { char: "O", color: "text-white-300" },
@@ -58,7 +58,7 @@ export default function Page() {
         className="hidden md:block h-[80vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImageDesktop.src})` }}
       >
-        <div className="absolute bottom-0 text-[#b5241f] flex items-center justify-center inset-0 bg-black/50">
+        <div className="absolute bottom-0 text-[#ff3e00] flex items-center justify-center inset-0 bg-black/50">
           <motion.h1
             className="text-7xl font-bold flex"
             initial="initial"

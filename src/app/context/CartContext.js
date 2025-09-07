@@ -95,10 +95,10 @@ export const CartProvider = ({ children }) => {
       </CartContext.Provider>
 
       {/* ✅ WhatsApp Floating Button */}
-      <div className="fixed bottom-8 left-6 z-50">
+      <div className="fixed bottom-8 left-3 left-6 z-50">
         <Link
-          href="https://wa.me/923224799827"
-          className="w-[60px] h-[60px] flex items-center justify-center rounded-full border border-white/20 bg-[#51cb60] text-white shadow-lg hover:bg-[#128C7E] transition"
+          href="https://wa.me/923124378823"
+          className="w-[50px] h-[50px] flex items-center justify-center rounded-full border border-white/20 bg-[#51cb60] text-white shadow-lg hover:bg-[#128C7E] transition"
           aria-label="Chat on WhatsApp"
           target="_blank"
         >
