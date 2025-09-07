@@ -198,10 +198,7 @@ export default function CheckoutPage() {
               <span>Subtotal</span>
               <span>Rs {subtotal}</span>
             </div>
-            <div className="flex justify-between text-sm">
-              <span>Shipping</span>
-              <span>Flat rate: <strong>Rs {shipping}</strong></span>
-            </div>
+          
             <div className="flex justify-between font-bold border-t pt-2 text-lg">
               <span>Total</span>
               <span>Rs {total}</span>

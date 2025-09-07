@@ -20,6 +20,16 @@ import Haval from "../assets/images/haval.png";
 import Audi from "../assets/images/audi.png";
 import WagonR from "../assets/images/suzuki-wagonr.png";
 import Alto from "../assets/images/alto.png";
+import Coaster from "../assets/images/coaster.png";
+import Caben from "../assets/images/1grandcabin.png";
+import Changan from "../assets/images/changan_karwan.png";
+import MG from "../assets/images/MG-.webp";
+import Rangerover from "../assets/images/rangrover.webp";
+import BMW from "../assets/images/bmw-k.png";
+import Mercedes from "../assets/images/marcadese.webp";
+import RollsRoyce from "../assets/images/Rolls-Royce.webp";
+import GWegon from "../assets/images/Marcedes-G-Wagon.png";
+import Limo from "../assets/images/limo-ramy.png";
 // Icons
 import { Fuel, Users, Gauge, Cog, ArrowRight, ShoppingCart } from "lucide-react";
 
@@ -40,7 +50,17 @@ const cars = [
   { id:13,  tag: "Audi Car",   name: "Audi",             image: Audi,        fuel: "PB", seats: 5, topSpeed: "150 mph", transmission: "Automatic", price: 35000 },
   { id:14,  tag: "Suzuki Car", name: "Wagon R",          image: WagonR,      fuel: "PB", seats: 5, topSpeed: "100 mph", transmission: "Manual",    price: 5000  },
   { id:15,  tag: "Suzuki Car", name: "Alto",             image: Alto,        fuel: "PB", seats: 5, topSpeed: "90 mph",  transmission: "Manual",    price: 5000  },
-];
+  { id:16,  tag: "Toyota Van", name: "Coaster",          image: Coaster,     fuel: "Diesel", seats: 30, topSpeed: "80 mph", transmission: "Manual"},
+  { id:17,  tag: "Toyota Van", name: "Grand Cabin",      image: Caben,       fuel: "Diesel", seats: 13, topSpeed: "90 mph", transmission: "Manual",    price: 18000 },
+  { id:18,  tag: "Changan Van",name: "Changan Karwan",   image: Changan,     fuel: "Diesel", seats: 7, topSpeed: "85 mph", transmission: "Manual",    price: 8000 },
+  { id:19,  tag: "MG Car",     name: "MG",               image: MG,          fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 12000 },
+  { id:20,  tag: "Land Rover", name: "Range Rover",      image: Rangerover,  fuel: "PB", seats: 5, topSpeed: "155 mph", transmission: "Automatic", price: 40000 },
+  { id:21,  tag: "BMW Car",    name: "BMW",              image: BMW,         fuel: "PB", seats: 5, topSpeed: "160 mph", transmission: "Automatic", price: 45000 },
+  { id:22,  tag: "Mercedes Car",name: "Mercedes",        image: Mercedes,    fuel: "PB", seats: 5, topSpeed: "150 mph", transmission: "Automatic", price: 50000 },
+  { id:23,  tag: "Rolls Royce",name: "Rolls Royce",     image: RollsRoyce,  fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 70000 },
+  { id:24,  tag: "Mercedes Car",name: "G-Wagon",        image: GWegon,      fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 60000 },
+  { id:25,  tag: "Limousine",  name: "Limousine",       image: Limo,        fuel: "PB", seats: 8, topSpeed: "110 mph", transmission: "Automatic", price: 100000 },
+  ];
 
 // -------- UTILS --------
 const ACCENT = "text-red-500";
