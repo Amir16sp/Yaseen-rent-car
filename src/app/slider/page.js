@@ -76,7 +76,7 @@ const BRANDS = [
         <h2 className="text-2xl sm:text-3xl font-bold text-center pt-10 text-black drop-shadow-md">
           From Budget to Luxury — Every Car for Every Need
         </h2>
-        <h1 className="text-3xl sm:text-5xl font-bold text-center pb-10 text-[#ff3e00] drop-shadow-md">
+        <h1 className="text-3xl sm:text-5xl font-bold text-center pb-10 text-orange-500 drop-shadow-md">
           Yaseen Rent a Car
         </h1>
 
