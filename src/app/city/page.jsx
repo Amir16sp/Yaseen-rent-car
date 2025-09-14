@@ -15,6 +15,10 @@ const CITIES = [
   { name: "Sahiwal", img: "/images/images (1).jpeg1.jpeg" },
   { name: "Faislabad", img: "/images/images (1).jpeg2.jpeg" },
   { name: "Pashawar", img: "/images/download.jpeg" },
+   { name: "Gujranwala", img: "/images/gujranwala.jpg" },
+    { name: "Swat", img: "/images/sawat.jpg" },
+     { name: "Lexus Hunza", img: "/images/laxusHanza.jpg" },
+      { name: "Sialkot", img: "/images/sialkot.jpg" },
 ];
 
 export default function CoverageSection() {

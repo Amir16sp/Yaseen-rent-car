@@ -5,16 +5,18 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="relative w-full h-screen bg-gradient-to-t from-gray-900/80 via-gray-700/60 to-transparent
-">
+    <div className="relative w-full h-screen">
       {/* Background Image */}
       <Image
-        src="/images/5584425-toyota-wallpapers-min.jpg" // put your uploaded image in /public folder
+        src="/images/5584425-toyota-wallpapers-min.jpg" // image in /public/images
         alt="Background"
-        layout="fill"
-        objectFit="cover"
-        className="brightness-50"
+        fill
+        priority
+        className="object-cover brightness-50"
       />
+
+      {/* Dark gradient overlay (same as your bg-gradient classes) */}
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-700/60 to-transparent" />
 
       {/* Overlay Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6">
@@ -43,19 +45,39 @@ export default function Home() {
             ))}
         </div>
 
-        {/* Profile */}
-   <div className="flex flex-col items-center">
-  <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white">
+        {/* Profiles: FLEX container */}
+
+<div className="mt-6 flex flex-row items-center justify-center gap-6 flex-wrap">
+  {/* Profile 1 */}
+  <div className="flex flex-col items-center">
+    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white">
+      <Image
+        src="/images/WhatsApp Image 2025-09-07 at 14.51.18_d5c8efcc.jpg"
+        alt="Yaseen Anjum"
+        width={96}
+        height={96}
+        className="object-cover"
+      />
+    </div>
+    <h3 className="mt-2 text-sm sm:text-base font-semibold">Ceo: Yaseen Anjum</h3>
+  </div>
+
+  {/* Profile 2 */}
+<div className="flex flex-col items-center">
+  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white">
     <Image
-      src="/images/WhatsApp Image 2025-09-07 at 14.51.18_d5c8efcc.jpg"
+      src="/images/masair.jpg"
       alt="Yaseen Anjum"
-      width={96}
-      height={96}
-      className="object-cover"
+      fill
+      className="object-cover scale-[1.3] object-[60%_30]" 
+      /* object-[50%_25%] => center x, thoda upar y (face focus) */
     />
   </div>
-  <h3 className="mt-3 font-semibold">Yaseen Anjum</h3>
+  <h3 className="mt-2 text-sm sm:text-base font-semibold">Co Ceo: Yasir Yaseen</h3>
 </div>
+
+</div>
+
 
       </div>
     </div>

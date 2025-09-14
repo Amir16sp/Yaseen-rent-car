@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { FaArrowRight } from "react-icons/fa6";
+import Image from "next/image";
 
 export default function AnimatedHeroSlider() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -49,27 +50,36 @@ export default function AnimatedHeroSlider() {
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#e9eaed]">
       {/* Background slides */}
-      <div className="absolute inset-0">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === activeSlide
-                ? "opacity-100 translate-x-0"
-                : index < activeSlide
-                  ? "opacity-0 -translate-x-full"
-                  : "opacity-0 translate-x-full"
-              }`}
-          >
-            <img
-              src={slide.image}
-              alt={`Background ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-            {/* Dark overlay for readability */}
-            <div className="absolute inset-0 bg-black/40" />
-          </div>
-        ))}
+    <div className="absolute inset-0">
+  {slides.map((slide, index) => (
+    <div
+      key={slide.id}
+      className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+        index === activeSlide
+          ? "opacity-100 translate-x-0"
+          : index < activeSlide
+          ? "opacity-0 -translate-x-full"
+          : "opacity-0 translate-x-full"
+      }`}
+    >
+      {/* IMPORTANT: parent must be relative with fixed size for Image fill */}
+      <div className="relative w-full h-full">
+        <Image
+          src={slide.image}                // e.g. "/images/BBB7Oqb.jpg" (in /public)
+          alt={`Background ${index + 1}`}
+          fill                              // replaces width/height
+          className="object-cover"
+          sizes="100vw"                     // tell the browser it spans the viewport width
+          priority={index === activeSlide}  // improve LCP for visible slide
+        />
       </div>
+
+      {/* your overlay */}
+      <div className="absolute inset-0" />
+    </div>
+  ))}
+</div>
+
 
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
