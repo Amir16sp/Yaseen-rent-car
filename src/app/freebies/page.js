@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FooterEnd from "../Footer/FooterEnd"
-import bgImageDesktop from "../assets/images/agreementrecraft.png";
-import bgImageMobile from "../assets/images/agreementrecraft.png";
+import bgImageDesktop from "../assets/images/agreee.png";
+import bgImageMobile from "../assets/images/agreee.png";
 import Flowers from "../ShopNow/Flowers";
 import Freebies from "../freebies/freebies"
 import Circle from "../slider/page"
@@ -27,9 +27,24 @@ const textAnimation = {
 };
 
 const bookshopTitle = [
+  { char: "R", color: "text-white-300" },
+  { char: "e", color: "text-white-300" },
+  { char: "n", color: "text-white-300" },
+  { char: "t", color: "text-white-300" },
+  { char: "a", color: "text-white-300" },
+  { char: "l", color: "text-white-300" },
+  { char: "A", color: "text-white-300" },
+  { char: "g", color: "text-white-300" },
+  { char: "r", color: "text-white-300" },
+  { char: "e", color: "text-white-300" },
+  { char: "e", color: "text-white-300" },
+  { char: "m", color: "text-white-300" },
+  { char: "e", color: "text-white-300" },
+  { char: "n", color: "text-white-300" },
+  { char: "t", color: "text-white-300" },
+
 
 ];
-
 export default function Page() {
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
@@ -42,12 +57,12 @@ export default function Page() {
     <>
       {/* Desktop Background */}
       <div
-        className="hidden md:block h-[100vh] bg-cover bg-center relative"
+        className="hidden md:block h-[70vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImageDesktop.src})` }}
       >
         <div className="absolute inset-0  flex items-center justify-center">
           <motion.h1
-            className="text-7xl font-bold flex bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-500 bg-clip-text text-transparent hover:scale-110 transition-transform duration-400"
+            className="text-7xl text-[#ff3e00] font-bold flex  bg-clip-text  hover:scale-110 transition-transform duration-400"
             initial="initial"
             animate={shouldAnimate ? "animate" : "initial"}
             variants={textAnimation}
@@ -68,9 +83,9 @@ export default function Page() {
         className="block md:hidden h-[50vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImageMobile.src})` }}
       >
-        <div className="absolute inset-0 bg-black/60 flex items-end justify-center p-4">
+        <div className="absolute inset-0  flex items-end justify-center p-4">
           <motion.h1
-            className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-500 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300"
+            className="text-3xl text-[#ff3e00] sm:text-4xl font-bold  bg-clip-text  hover:scale-110 transition-transform duration-300"
             initial="initial"
             animate={shouldAnimate ? "animate" : "initial"}
             variants={textAnimation}
@@ -84,7 +99,7 @@ export default function Page() {
           </motion.h1>
         </div>
       </div>
-<Freebies/>
+      <Freebies />
       <Flowers />
       <Circle />
       <FooterEnd />

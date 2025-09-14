@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import Logo from "../assets/images/carlogo.png";
+import Logo from "../assets/images/yasirlogo.png";
 import FooterLogo from "../assets/images/rent-a-car-pictures-4-1536x864.png";
 import Container from "../Container";
 
@@ -37,7 +37,7 @@ const FooterEnd = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#ff3e00] text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                   >
                     <FaFacebookF size={18} />
                   </Link>
@@ -47,7 +47,7 @@ const FooterEnd = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#ff3e00] text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                   >
                     <FaInstagram size={18} />
                   </Link>
@@ -57,7 +57,7 @@ const FooterEnd = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#ff3e00] text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                   >
                     <FaWhatsapp size={18} />
                   </Link>
@@ -83,15 +83,7 @@ const FooterEnd = () => {
                 </ul>
               </div>
 
-              {/* Column 3 - (Optional future info) */}
-              {/* <div>
-                <h3 className="text-2xl sm:text-xl font-bold mb-4 text-[#FFD700]">Information</h3>
-                <ul className="space-y-2 text-gray-100 text-lg sm:text-base">
-                  <li><Link href="#" className="hover:text-[#FFE55C]">FAQs</Link></li>
-                  <li><Link href="#" className="hover:text-[#FFE55C]">Refund Policy</Link></li>
-                  <li><Link href="#" className="hover:text-[#FFE55C]">Terms & Conditions</Link></li>
-                </ul>
-              </div> */}
+             
 
               {/* Column 4 - Contact Details */}
               <div>

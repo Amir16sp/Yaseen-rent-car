@@ -58,7 +58,7 @@ export default function Page() {
         className="hidden md:block h-[80vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImageDesktop.src})` }}
       >
-        <div className="absolute bottom-0 text-[#ff3e00] flex items-center justify-center inset-0 bg-black/50">
+        <div className="absolute bottom-0 text-[#ff3e00] flex items-center justify-center inset-0 ">
           <motion.h1
             className="text-7xl font-bold flex"
             initial="initial"
@@ -84,9 +84,9 @@ export default function Page() {
         className="block md:hidden h-[50vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImageMobile.src})` }}
       >
-        <div className="absolute inset-0 bg-black/60 flex items-end justify-center p-4">
+        <div className="absolute inset-0  flex items-end justify-center p-4">
           <motion.h1
-            className="text-3xl sm:text-4xl font-bold text-[#97401a] text-center"
+            className="text-3xl sm:text-4xl font-bold text-[#ff3e00] text-center"
             initial="initial"
             animate={shouldAnimate ? "animate" : "initial"}
             variants={textAnimation}

@@ -67,7 +67,7 @@ const BRANDS = [
   { name: "Changan", logo: "/images/download_changan_1_-removebg-preview.png", width: 128, height: 80, href: "#" },
   { name: "Hyundai", logo: "/images/download11__1_-removebg-preview.png", width: 128, height: 80, href: "#" },
   { name: "Toyota",  logo: "/images/download1122__1_-removebg-preview.png",  width: 128, height: 80, href: "#" },
-  { name: "Suzuki",  logo: "/images/downloadsk8877__1_-removebg-preview.png",  width: 128, height: 80, href: "#" },
+ 
 ];
   return (
     <div>
@@ -76,7 +76,7 @@ const BRANDS = [
         <h2 className="text-2xl sm:text-3xl font-bold text-center pt-10 text-black drop-shadow-md">
           From Budget to Luxury — Every Car for Every Need
         </h2>
-        <h1 className="text-4xl sm:text-5xl font-bold text-center pb-10 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
+        <h1 className="text-4xl sm:text-5xl font-bold text-center pb-10 text-[#ff3e00] bg-clip-text  duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
           Yaseen Rent a Car
         </h1>
 
@@ -106,14 +106,14 @@ const BRANDS = [
           </motion.div>
         </div>
          <section className="w-full bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className=" max-w-9xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Heading */}
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900">
-          Browse By <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">Categories</span> You
+          Browse By <span className=" bg-clip-text text-[#ff3e00] duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">Categories</span> You
         </h2>
 
         {/* Logo row */}
-        <div className="mt-10 md:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10 items-center justify-items-center">
+        <div className="mt-10 md:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10 items-center justify-items-center">
           {BRANDS.map((b) => {
             const content = (
               <>

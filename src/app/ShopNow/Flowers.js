@@ -3,26 +3,17 @@ import React from "react";
 import Link from "next/link";
 import bgImage from "../assets/images/redmg.jpg";
 import { FaArrowRight } from "react-icons/fa6";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 
 const Flowers = () => {
   const title = [
-    {
-      char: "Y",
-      color: "bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent duration-300 hover:scale-105 hover:-translate-y-1"
-    },
+    {char: "Y", color: "text-[#ff3e00]"},
 
-    {
-      char: "a",
-      color: "bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent duration-300 hover:scale-105 hover:-translate-y-1"
-    },
+    {char: "a", color: "text-[#ff3e00]"},
     { char: "s", color: "text-white" },        // White pops on dark overlay
     { char: "e", color: "text-white" },
     { char: "e", color: "text-white" },
-    {
-      char: "n",
-      color: "bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent duration-300 hover:scale-105 hover:-translate-y-1"
-    },   // Balance gold-white contrast
+    {char: "n", color: "text-[#ff3e00]"},  // Balance gold-white contrast
   ];
 
   return (
@@ -70,7 +61,7 @@ const Flowers = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-600 to-amber-600 px-8 py-4 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+              className="inline-flex items-center gap-2 rounded-full bg-[#ff3e00] px-8 py-4 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
             >
               <span className="flex items-center gap-2">
                 Book A Rental

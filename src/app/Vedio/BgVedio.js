@@ -53,13 +53,12 @@ export default function AnimatedHeroSlider() {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === activeSlide
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === activeSlide
                 ? "opacity-100 translate-x-0"
                 : index < activeSlide
-                ? "opacity-0 -translate-x-full"
-                : "opacity-0 translate-x-full"
-            }`}
+                  ? "opacity-0 -translate-x-full"
+                  : "opacity-0 translate-x-full"
+              }`}
           >
             <img
               src={slide.image}
@@ -110,7 +109,7 @@ export default function AnimatedHeroSlider() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-600 to-amber-600 px-8 py-4 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#ff3e00] px-8 py-4 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
                 >
                   <span className="flex items-center gap-2">
                     Book A Rental <FaArrowRight />
@@ -125,11 +124,10 @@ export default function AnimatedHeroSlider() {
                 <button
                   key={index}
                   onClick={() => setActiveSlide(index)}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                    index === activeSlide
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === activeSlide
                       ? "bg-[#ff3e00] scale-125"
                       : "bg-white/50 hover:bg-white/70"
-                  }`}
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}

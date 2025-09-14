@@ -18,7 +18,7 @@ export default function BlogFeatureCard({
 
   return (
     <article className="w-full">
-      <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-[minmax(0,520px)_1fr] p-6 md:p-12">
+      <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-[minmax(0,520px)_1fr] p-6 md:p-12 mt-20">
         {/* Image */}
         <div className={`relative overflow-hidden rounded-xl bg-gray-100 shadow-sm ${reverse ? "md:order-2" : "md:order-1"}`}>
           <div className="relative aspect-[16/9] md:aspect-[4/3]">
@@ -56,7 +56,7 @@ export default function BlogFeatureCard({
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-600 to-amber-600 px-8 py-4 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                className="inline-flex items-center gap-2 rounded-full bg-[#ff3e00] px-8 py-4 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
               >
                 <span className="flex items-center gap-2">
                   Book A Rental <FaArrowRight />

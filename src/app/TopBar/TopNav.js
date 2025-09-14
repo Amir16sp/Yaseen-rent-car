@@ -1,161 +1,198 @@
 "use client";
-import React, { useState, useRef } from "react";
+
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import Image from "next/image";
-import Logo from "../assets/images/carlogo.png";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import Logo from "../assets/images/yasirlogo.png";
 
-const TopNav = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [expandedMenu, setExpandedMenu] = useState(null);
-  const menuRef = useRef(null);
+export default function TopNav() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [expanded, setExpanded] = useState(null);
+  const pathname = usePathname();
+  const close = () => setMobileOpen(false);
 
-  const toggleExpandMobile = (name) => {
-    setExpandedMenu((prev) => (prev === name ? null : name));
-  };
+  // body scroll lock + ESC to close
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    const onEsc = (e) => e.key === "Escape" && close();
+    window.addEventListener("keydown", onEsc);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onEsc);
+    };
+  }, [mobileOpen]);
 
   const items = [
-    { name: "BOOK NOW", link: "/bookshop", color: "text-white" },
-      { name: "About", link: "/age", color: "text-white" },
-    { name: "Blog", link: "/about", color: "text-white" },
-  
-  
-    { name: "Rental Agreement", link: "/freebies", color: "text-white" },
-    { name: "CONTACT US", link: "/contact", color: "text-white" },
+    { name: "BOOK NOW", link: "/bookshop" },
+    { name: "About", link: "/age" },
+    { name: "Blog", link: "/about" },
+    // { name: "Services", subItems: [{ name: "Airport", link: "/s/airport" }, { name: "City", link: "/s/city" }]},
+    { name: "Rental Agreement", link: "/freebies" },
+    { name: "CONTACT US", link: "/contact" },
   ];
 
+  const isActive = (href) => href && pathname?.startsWith(href);
+
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-gray-900 h-18 flex items-center">
-      <div className="w-full px-3 lg:px-10 flex justify-between items-center">
+    <div className="fixed top-0 left-0 z-50 w-full bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/80">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 lg:h-24 lg:px-10">
         <Link href="/" className="cursor-pointer">
-          <Image src={Logo} alt="Logo" width={110} height={45} />
+          <Image src={Logo} alt="Logo" width={130} height={55} priority />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center font-light text-white h-full">
-          <ul className="flex items-center space-x-4 h-full">
-            {items.map((item) => (
-              <li key={item.name} className="relative px-2 text-base">
-                {item.subItems ? (
-                  <div
-                    className="relative group h-full flex items-center"
-                    onMouseEnter={() => setExpandedMenu(item.name)}
-                    onMouseLeave={() => setExpandedMenu(null)}
-                  >
-                    <div className="hover:underline cursor-pointer flex items-center gap-1">
-                      {item.name}
-                      <span className="text-xs">▼</span>
-                    </div>
-                    {expandedMenu === item.name && (
-                      <ul className="absolute left-0 top-full -mt-1 w-48 bg-[#a84618] text-white shadow-lg rounded-md z-50">
-                        {item.subItems.map((subItem) => (
-                          <li key={subItem.name}>
-                            <Link
-                              href={subItem.link}
-                              className="block px-4 py-2 hover:bg-[#852b02]"
-                            >
-                              {subItem.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ) : (
+        {/* Desktop */}
+        <nav className="hidden md:flex items-center">
+          <ul className="flex items-center gap-6 text-white">
+            {items.map((item) =>
+              item.subItems ? (
+                <li key={item.name} className="relative group">
+                  <button className="flex items-center gap-1 hover:underline">
+                    {item.name} <span className="text-xs">▼</span>
+                  </button>
+                  <ul className="invisible absolute left-0 top-full z-50 w-48 rounded-md bg-[#a84618] p-1 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+                    {item.subItems.map((s) => (
+                      <li key={s.name}>
+                        <Link
+                          href={s.link}
+                          className="block rounded px-3 py-2 text-white hover:bg-[#852b02]"
+                        >
+                          {s.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li key={item.name}>
                   <Link
                     href={item.link}
-                    className="hover:underline transition-all duration-300 font-medium flex items-center gap-1"
+                    className={`font-medium hover:underline ${
+                      isActive(item.link) ? "text-orange-400" : "text-white"
+                    }`}
                   >
                     {item.name}
                   </Link>
-                )}
-              </li>
-            ))}
+                </li>
+              )
+            )}
           </ul>
         </nav>
 
-        {/* Mobile Hamburger + Animated Menu */}
-        <div className="relative md:hidden" ref={menuRef}>
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-3xl text-red-600"
-          >
-            <GiHamburgerMenu />
-          </button>
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setMobileOpen(true)}
+          className="md:hidden text-3xl text-[#ff3e00]"
+          aria-label="Open menu"
+        >
+          <GiHamburgerMenu />
+        </button>
+      </div>
 
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "100%" }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="absolute top-7 right-0 w-64 bg-[#b8d680] z-50 shadow-lg p-4"
-              >
-                <div className="flex justify-between items-center mb-4">
-                  <Image src={Logo} alt="Logo" width={80} height={40} />
-                  <button
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-2xl text-black"
-                  >
-                    ✕
-                  </button>
-                </div>
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            {/* overlay */}
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[60] bg-black"
+              onClick={close}
+            />
+            {/* panel */}
+            <motion.aside
+              key="panel"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.25 }}
+              className="fixed right-0 top-0 z-[70] h-screen w-72 sm:w-80 rounded-l-2xl bg-white shadow-2xl"
+              role="dialog"
+              aria-modal="true"
+            >
+              <div className="flex items-center justify-between p-4 border-b">
+                <Image src={Logo} alt="Logo" width={100} height={44} />
+                <button
+                  onClick={close}
+                  className="rounded-md bg-red-600 px-3 py-1.5 text-sm font-bold text-white hover:bg-red-700"
+                  aria-label="Close menu"
+                >
+                  X
+                </button>
+              </div>
 
-                <ul className="space-y-4 text-black font-medium">
+              <nav className="p-2">
+                <ul className="space-y-1">
                   {items.map((item) => (
                     <li key={item.name}>
                       {item.subItems ? (
-                        <div
-                          className="flex justify-between items-center cursor-pointer"
-                          onClick={() => toggleExpandMobile(item.name)}
-                        >
-                          <span className="hover:text-yellow-400">
-                            {item.name}
-                          </span>
-                          {expandedMenu === item.name ? (
-                            <IoIosArrowUp />
-                          ) : (
-                            <IoIosArrowDown />
-                          )}
-                        </div>
+                        <>
+                          <button
+                            onClick={() =>
+                              setExpanded((p) => (p === item.name ? null : item.name))
+                            }
+                            className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-left font-medium text-slate-800 hover:bg-slate-50"
+                          >
+                            <span>{item.name}</span>
+                            {expanded === item.name ? (
+                              <IoIosArrowUp className="text-slate-500" />
+                            ) : (
+                              <IoIosArrowDown className="text-slate-500" />
+                            )}
+                          </button>
+                          <AnimatePresence initial={false}>
+                            {expanded === item.name && (
+                              <motion.ul
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="ml-2 overflow-hidden rounded-lg bg-slate-50"
+                              >
+                                {item.subItems.map((s) => (
+                                  <li key={s.name}>
+                                    <Link
+                                      href={s.link}
+                                      onClick={close}
+                                      className={`block px-5 py-2 text-sm hover:bg-white ${
+                                        isActive(s.link) ? "text-[#ff3e00] font-semibold" : "text-slate-700"
+                                      }`}
+                                    >
+                                      {s.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </motion.ul>
+                            )}
+                          </AnimatePresence>
+                        </>
                       ) : (
                         <Link
                           href={item.link}
-                          className="block hover:text-yellow-400 transition duration-300"
-                          onClick={() => setMobileMenuOpen(false)}
+                          onClick={close}
+                          className={`block rounded-lg px-4 py-3 font-medium transition ${
+                            isActive(item.link)
+                              ? "bg-slate-50 text-[#ff3e00]"
+                              : "text-slate-800 hover:bg-slate-50"
+                          }`}
                         >
                           {item.name}
                         </Link>
                       )}
-
-                      {item.subItems && expandedMenu === item.name && (
-                        <ul className="ml-4 mt-2 space-y-2 text-sm font-normal text-black">
-                          {item.subItems.map((subItem) => (
-                            <li key={subItem.name}>
-                              <Link
-                                href={subItem.link}
-                                className="block hover:text-yellow-300"
-                                onClick={() => setMobileMenuOpen(false)}
-                              >
-                                {subItem.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
                     </li>
                   ))}
                 </ul>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
+              </nav>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
-};
-
-export default TopNav;
+}
