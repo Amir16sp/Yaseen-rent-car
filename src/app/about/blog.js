@@ -51,12 +51,12 @@ export default function BlogFeatureCard({
           <h2 className="text-2xl font-extrabold text-gray-900 md:text-3xl">{title}</h2>
           <p className="mt-4 max-w-prose text-base leading-7 text-gray-600">{excerpt}</p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link href={href} prefetch>
+          <div className="mt-8 sm:mt-10 flex items-center gap-4 md:gap-5">
+            <Link href="/bookshop" prefetch>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 rounded-full bg-[#ff3e00] px-8 py-4 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                className="bg-[#ff3e00] hover:bg-orange-700 text-white px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base md:text-lg inline-flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
               >
                 <span className="flex items-center gap-2">
                   Book A Rental <FaArrowRight />
@@ -64,6 +64,7 @@ export default function BlogFeatureCard({
               </motion.button>
             </Link>
           </div>
+
 
           <hr className="mt-8 border-gray-200" />
         </div>

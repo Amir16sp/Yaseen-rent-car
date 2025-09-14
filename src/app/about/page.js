@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FooterEnd from "../Footer/FooterEnd";
 import Flowers from "../ShopNow/Flowers";
-import Story from "../OurStory/Story";
+
 import Circle from "../slider/page"
 import bgImageDesktop from "../assets/images/blogyaseen.png";
 import React from "react";
