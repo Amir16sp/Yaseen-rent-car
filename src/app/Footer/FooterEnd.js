@@ -94,7 +94,7 @@ const FooterEnd = () => {
                   <li className="font-semibold">📞 Contact: 0312 437 8823</li>
                   <li className="font-semibold">📧 yaseenrentcar90@gmail.com</li>
                   <li className="font-semibold">
-                    📍 Dhayya More, Near Attock Pump, Main GT Road, Lahore
+                    📍 Johar Town , Lahore
                   </li>
                 </ul>
               </div>
