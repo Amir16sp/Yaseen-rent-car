@@ -67,7 +67,7 @@ export default function CheckoutPage() {
 
       {/* — Left: Billing Form — */}
       <div>
-        <h2 className="text-2xl font-bold mb-4">Billing details</h2>
+        <h2 className="text-2xl font-bold mb-4">Booking Details</h2>
         <form className="space-y-4">
           <div className="flex gap-4">
             <input
@@ -161,11 +161,11 @@ export default function CheckoutPage() {
               checked={shipToDifferent}
               onChange={e => setShipToDifferent(e.target.checked)}
             />
-            <span>Ship to a different address?</span>
+            <span>Different Pickup or Drop-off Address?</span>
           </label>
 
           <div>
-            <label className="block mb-1 font-semibold">Order notes (optional)</label>
+            <label className="block mb-1 font-semibold">Pickup notes (optional)</label>
             <textarea
               className="w-full border rounded p-2"
               rows={3}
@@ -184,7 +184,7 @@ export default function CheckoutPage() {
           className="sticky top-16 bg-cover bg-center border p-6 rounded-lg shadow-sm"
           style={{ backgroundImage: "url('/back.png')" }}
         >
-          <h2 className="text-2xl font-bold mb-4">Your order</h2>
+          <h2 className="text-2xl font-bold mb-4">Your Booking</h2>
 
           <div className="space-y-2 mb-4">
             {cartItems.map(item => (
@@ -200,7 +200,7 @@ export default function CheckoutPage() {
             </div>
 
             <div className="flex justify-between font-bold border-t pt-2 text-lg">
-              <span>Total</span>
+              <span>Online Tax</span>
               <span>Rs {total}</span>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function CheckoutPage() {
                 checked={paymentMethod === 'Cash on Delivery'}
                 onChange={e => setPaymentMethod(e.target.value)}
               />
-              Cash on Delivery
+              Payment By Hand
             </label>
 
             <label className="flex items-start gap-2">
@@ -230,7 +230,7 @@ export default function CheckoutPage() {
               <span>
                 Bank Deposit
                 <div className="bg-gray-100 p-2 text-xs mt-1 rounded">
-                  Transfer your order’s payment to our bank account…
+                  Transfer your booking payment to our bank account…
                   <textarea
                     className="mt-2 w-full p-1 border rounded"
                     rows={2}
@@ -249,9 +249,9 @@ export default function CheckoutPage() {
 
           <button
             onClick={handlePlaceOrder}
-            className="mt-4 w-full bg-gradient-to-r from-orange-600 to-amber-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition-all hover:scale-105 hover:shadow-lg"
+            className="mt-4 w-full bg-[#ff3e00] text-white font-bold py-2 px-4 rounded-full shadow-md transition-all hover:scale-105 hover:shadow-lg"
           >
-            PLACE ORDER
+           Your Booking
           </button>
 
         </div>

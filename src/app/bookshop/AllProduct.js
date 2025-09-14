@@ -125,13 +125,7 @@ function VehicleCard({ item, onAdd, priority = false }) {
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#ff3e00]" />
           </button>
 
-          <button
-            onClick={() => onAdd?.(item)}
-            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold bg-[#ff3e00] text-white hover:bg-orange-700 transition"
-          >
-            <FaCar className="w-4 h-4" />
-            Add to cart
-          </button>
+         
         </div>
       </div>
     </div>

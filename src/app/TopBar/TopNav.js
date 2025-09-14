@@ -39,7 +39,7 @@ export default function TopNav() {
 
   return (
     <div className="fixed top-0 left-0 z-50 w-full bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/80">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 lg:h-24 lg:px-10">
+      <div className="mx-auto flex h-20  items-center justify-between px-3 lg:h-24 lg:px-10">
         <Link href="/" className="cursor-pointer">
           <Image src={Logo} alt="Logo" width={130} height={55} priority />
         </Link>
@@ -53,12 +53,12 @@ export default function TopNav() {
                   <button className="flex items-center gap-1 hover:underline">
                     {item.name} <span className="text-xs">▼</span>
                   </button>
-                  <ul className="invisible absolute left-0 top-full z-50 w-48 rounded-md bg-[#a84618] p-1 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+                  <ul className="invisible absolute left-0 top-full z-50 w-48 rounded-md bg-[#ff3e00] p-1 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
                     {item.subItems.map((s) => (
                       <li key={s.name}>
                         <Link
                           href={s.link}
-                          className="block rounded px-3 py-2 text-white hover:bg-[#852b02]"
+                          className="block rounded px-3 py-2 text-white hover:bg-[#ff3e00]"
                         >
                           {s.name}
                         </Link>
@@ -71,7 +71,7 @@ export default function TopNav() {
                   <Link
                     href={item.link}
                     className={`font-medium hover:underline ${
-                      isActive(item.link) ? "text-orange-400" : "text-white"
+                      isActive(item.link) ? "text-[#ff3e00]" : "text-white"
                     }`}
                   >
                     {item.name}
