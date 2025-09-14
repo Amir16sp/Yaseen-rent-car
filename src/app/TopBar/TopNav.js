@@ -18,24 +18,11 @@ const TopNav = () => {
 
   const items = [
     { name: "BOOK NOW", link: "/bookshop", color: "text-white" },
-    { name: "USES", link: "/about", color: "text-white" },
-    { name: "BENEFITS & FEATURES", link: "/age", color: "text-white" },
-    {
-      name: "Vehicles",
-      link: "#",
-      color: "text-white",
-      subItems: [
-        { name: "Toyota", link: "/story_books" },
-        { name: "Honda", link: "/board_books" },
-        { name: "Suzuki", link: "/activity_books" },
-        { name: "Bus", link: "/coth_books_and_sensory_books" },
-        { name: "Audi A6", link: "/hadith_Seerah_and_islamic_history" },
-        { name: "Range Rover", link: "/hajj_umrah_and_Eid" },
-        { name: "Rolls Royce", link: "/urdu_books" },
-        { name: "Mercedes Maybach", link: "/hardcover" },
-      ],
-    },
-    { name: "Application", link: "/freebies", color: "text-white" },
+      { name: "About", link: "/age", color: "text-white" },
+    { name: "Blog", link: "/about", color: "text-white" },
+  
+  
+    { name: "Rental Agreement", link: "/freebies", color: "text-white" },
     { name: "CONTACT US", link: "/contact", color: "text-white" },
   ];
 

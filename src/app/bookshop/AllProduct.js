@@ -30,48 +30,49 @@ import Mercedes from "../assets/images/marcadese.webp";
 import RollsRoyce from "../assets/images/Rolls-Royce.webp";
 import GWegon from "../assets/images/Marcedes-G-Wagon.png";
 import Limo from "../assets/images/limo-ramy.png";
+
 // Icons
 import { Fuel, Users, Gauge, Cog, ArrowRight, ShoppingCart } from "lucide-react";
 
 // -------- DATA (with price) --------
 const cars = [
-  { id: 1,  tag: "Toyota Car", name: "Land Cruiser V8", image: LandCruiser, fuel: "PB", seats: 7, topSpeed: "130 mph", transmission: "Automatic", price: 35000 },
-  { id: 2,  tag: "Toyota Car", name: "Prado",            image: Prado,       fuel: "PB", seats: 7, topSpeed: "120 mph", transmission: "Automatic", price: 20000 },
-  { id: 3,  tag: "Toyota Car", name: "Fortuner",         image: Fortuner,    fuel: "PB", seats: 7, topSpeed: "115 mph", transmission: "Automatic", price: 18000 },
-  { id: 4,  tag: "Toyota Car", name: "Hilux",            image: Hilux,       fuel: "PB", seats: 5, topSpeed: "110 mph", transmission: "Manual",    price: 20000 },
-  { id: 5,  tag: "Honda Car",  name: "Civic",            image: Civic,       fuel: "PB", seats: 5, topSpeed: "124 mph", transmission: "Automatic", price: 10000 },
-  { id: 6,  tag: "Honda Car",  name: "City",             image: City,        fuel: "PB", seats: 5, topSpeed: "118 mph", transmission: "Automatic", price: 6000 },
-  { id: 7,  tag: "Toyota Car", name: "Corolla",          image: Corolla,     fuel: "PB", seats: 5, topSpeed: "121 mph", transmission: "Automatic", price: 6500 },
-  { id: 8,  tag: "Toyota Car", name: "Yaris",            image: Yaris,       fuel: "PB", seats: 5, topSpeed: "112 mph", transmission: "Automatic", price: 6000 },
-  { id: 9,  tag: "Honda Car",  name: "BR-V",             image: BRV,         fuel: "PB", seats: 7, topSpeed: "105 mph", transmission: "CVT",       price: 8000 },
-  { id:10,  tag: "Hyundai Car",name: "Sonata",           image: Sonata,      fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 10000 },
-  { id:11,  tag: "KIA Car",    name: "KIA Sedan",        image: KIA,         fuel: "PB", seats: 5, topSpeed: "120 mph", transmission: "Automatic", price: 12000 },
-  { id:12,  tag: "Haval Car",  name: "Haval",            image: Haval,       fuel: "PB", seats: 5, topSpeed: "120 mph", transmission: "Automatic", price: 15000 },
-  { id:13,  tag: "Audi Car",   name: "Audi",             image: Audi,        fuel: "PB", seats: 5, topSpeed: "150 mph", transmission: "Automatic", price: 35000 },
-  { id:14,  tag: "Suzuki Car", name: "Wagon R",          image: WagonR,      fuel: "PB", seats: 5, topSpeed: "100 mph", transmission: "Manual",    price: 5000  },
-  { id:15,  tag: "Suzuki Car", name: "Alto",             image: Alto,        fuel: "PB", seats: 5, topSpeed: "90 mph",  transmission: "Manual",    price: 5000  },
-  { id:16,  tag: "Toyota Van", name: "Coaster",          image: Coaster,     fuel: "Diesel", seats: 30, topSpeed: "80 mph", transmission: "Manual"},
-  { id:17,  tag: "Toyota Van", name: "Grand Cabin",      image: Caben,       fuel: "Diesel", seats: 13, topSpeed: "90 mph", transmission: "Manual",    price: 18000 },
-  { id:18,  tag: "Changan Van",name: "Changan Karwan",   image: Changan,     fuel: "Diesel", seats: 7, topSpeed: "85 mph", transmission: "Manual",    price: 8000 },
-  { id:19,  tag: "MG Car",     name: "MG",               image: MG,          fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 12000 },
-  { id:20,  tag: "Land Rover", name: "Range Rover",      image: Rangerover,  fuel: "PB", seats: 5, topSpeed: "155 mph", transmission: "Automatic", price: 40000 },
-  { id:21,  tag: "BMW Car",    name: "BMW",              image: BMW,         fuel: "PB", seats: 5, topSpeed: "160 mph", transmission: "Automatic", price: 45000 },
-  { id:22,  tag: "Mercedes Car",name: "Mercedes",        image: Mercedes,    fuel: "PB", seats: 5, topSpeed: "150 mph", transmission: "Automatic", price: 50000 },
-  { id:23,  tag: "Rolls Royce",name: "Rolls Royce",     image: RollsRoyce,  fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 70000 },
-  { id:24,  tag: "Mercedes Car",name: "G-Wagon",        image: GWegon,      fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 60000 },
-  { id:25,  tag: "Limousine",  name: "Limousine",       image: Limo,        fuel: "PB", seats: 8, topSpeed: "110 mph", transmission: "Automatic", price: 100000 },
-  ];
+  { id: 1, tag: "Toyota Car", name: "Land Cruiser V8", image: LandCruiser, fuel: "PB", seats: 7, topSpeed: "130 mph", transmission: "Automatic", price: 35000 },
+  { id: 2, tag: "Toyota Car", name: "Prado", image: Prado, fuel: "PB", seats: 7, topSpeed: "120 mph", transmission: "Automatic", price: 20000 },
+  { id: 3, tag: "Toyota Car", name: "Fortuner", image: Fortuner, fuel: "PB", seats: 7, topSpeed: "115 mph", transmission: "Automatic", price: 18000 },
+  { id: 4, tag: "Toyota Car", name: "Hilux", image: Hilux, fuel: "PB", seats: 5, topSpeed: "110 mph", transmission: "Manual", price: 20000 },
+  { id: 5, tag: "Honda Car", name: "Civic", image: Civic, fuel: "PB", seats: 5, topSpeed: "124 mph", transmission: "Automatic", price: 10000 },
+  { id: 6, tag: "Honda Car", name: "City", image: City, fuel: "PB", seats: 5, topSpeed: "118 mph", transmission: "Automatic", price: 6000 },
+  { id: 7, tag: "Toyota Car", name: "Corolla", image: Corolla, fuel: "PB", seats: 5, topSpeed: "121 mph", transmission: "Automatic", price: 6500 },
+  { id: 8, tag: "Toyota Car", name: "Yaris", image: Yaris, fuel: "PB", seats: 5, topSpeed: "112 mph", transmission: "Automatic", price: 6000 },
+  { id: 9, tag: "Honda Car", name: "BR-V", image: BRV, fuel: "PB", seats: 7, topSpeed: "105 mph", transmission: "CVT", price: 8000 },
+  { id: 10, tag: "Hyundai Car", name: "Sonata", image: Sonata, fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 10000 },
+  { id: 11, tag: "KIA Car", name: "KIA Sedan", image: KIA, fuel: "PB", seats: 5, topSpeed: "120 mph", transmission: "Automatic", price: 12000 },
+  { id: 12, tag: "Haval Car", name: "Haval", image: Haval, fuel: "PB", seats: 5, topSpeed: "120 mph", transmission: "Automatic", price: 15000 },
+  { id: 13, tag: "Audi Car", name: "Audi", image: Audi, fuel: "PB", seats: 5, topSpeed: "150 mph", transmission: "Automatic", price: 35000 },
+  { id: 14, tag: "Suzuki Car", name: "Wagon R", image: WagonR, fuel: "PB", seats: 5, topSpeed: "100 mph", transmission: "Manual", price: 5000 },
+  { id: 15, tag: "Suzuki Car", name: "Alto", image: Alto, fuel: "PB", seats: 5, topSpeed: "90 mph", transmission: "Manual", price: 5000 },
+  { id: 16, tag: "Toyota Van", name: "Coaster", image: Coaster, fuel: "Diesel", seats: 30, topSpeed: "80 mph", transmission: "Manual" },
+  { id: 17, tag: "Toyota Van", name: "Grand Cabin", image: Caben, fuel: "Diesel", seats: 13, topSpeed: "90 mph", transmission: "Manual", price: 18000 },
+  { id: 18, tag: "Changan Van", name: "Changan Karwan", image: Changan, fuel: "Diesel", seats: 7, topSpeed: "85 mph", transmission: "Manual", price: 8000 },
+  { id: 19, tag: "MG Car", name: "MG", image: MG, fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 12000 },
+  { id: 20, tag: "Land Rover", name: "Range Rover", image: Rangerover, fuel: "PB", seats: 5, topSpeed: "155 mph", transmission: "Automatic" },
+  { id: 21, tag: "BMW Car", name: "BMW", image: BMW, fuel: "PB", seats: 5, topSpeed: "160 mph", transmission: "Automatic" },
+  { id: 22, tag: "Mercedes Car", name: "Mercedes", image: Mercedes, fuel: "PB", seats: 5, topSpeed: "150 mph", transmission: "Automatic" },
+  { id: 23, tag: "Rolls Royce", name: "Rolls Royce", image: RollsRoyce, fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic" },
+  { id: 24, tag: "Mercedes Car", name: "G-Wagon", image: GWegon, fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic" },
+  { id: 25, tag: "Limousine", name: "Limousine", image: Limo, fuel: "PB", seats: 8, topSpeed: "110 mph", transmission: "Automatic" },
+];
 
 // -------- UTILS --------
-const ACCENT = "text-red-500";
 const formatPrice = (n) => `Rs ${Number(n).toLocaleString("en-PK")}`;
 
 // -------- UI bits --------
 function Spec({ icon, label }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[#e23d3d]">{icon}</span>
-      {/* Bigger + bold text */}
+      <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+        {icon}
+      </span>
       <span className="text-sm md:text-base font-semibold text-neutral-800">
         {label}
       </span>
@@ -82,7 +83,6 @@ function Spec({ icon, label }) {
 function VehicleCard({ item, onAdd }) {
   return (
     <div className="rounded-2xl bg-white shadow-sm ring-1 ring-neutral-200/70 overflow-hidden hover:shadow-md transition">
-      {/* image */}
       <div className="bg-white px-6 pt-8">
         <div className="relative mx-auto h-56 md:h-64 w-full">
           <Image
@@ -96,17 +96,14 @@ function VehicleCard({ item, onAdd }) {
         </div>
       </div>
 
-      {/* divider */}
       <div className="mx-6 my-6 border-t border-neutral-200/80" />
 
-      {/* meta */}
       <div className="px-6 pb-6">
         <p className="text-sm text-neutral-500">{item.tag}</p>
         <h3 className="mt-1 text-xl font-semibold tracking-tight text-neutral-900">
           {item.name}
         </h3>
 
-        {/* Price row */}
         <div className="mt-2 flex items-baseline gap-2">
           <span className="text-2xl font-bold text-neutral-900">
             {formatPrice(item.price)}
@@ -114,10 +111,8 @@ function VehicleCard({ item, onAdd }) {
           <span className="text-sm text-neutral-500">/ day</span>
         </div>
 
-        {/* divider */}
         <div className="mt-5 border-t border-neutral-200/80" />
 
-        {/* specs row — bigger + bold labels */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
           <Spec icon={<Fuel className="w-5 h-5" />} label={item.fuel} />
           <Spec icon={<Users className="w-5 h-5" />} label={`${item.seats} seats`} />
@@ -125,18 +120,17 @@ function VehicleCard({ item, onAdd }) {
           <Spec icon={<Cog className="w-5 h-5" />} label={item.transmission} />
         </div>
 
-        {/* bottom action */}
         <div className="mt-6 flex items-center">
           <button
             onClick={() => onAdd?.(item)}
             className="group inline-flex items-center gap-2 text-sm font-semibold text-neutral-900"
           >
             RENT NOW
-            <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-0.5 ${ACCENT}`} />
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent" />
           </button>
           <button
             onClick={() => onAdd?.(item)}
-            className="ml-4 inline-flex items-center gap-2 rounded-full border border-red-200 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50"
+            className="ml-4 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:from-orange-700 hover:to-amber-700 transition"
           >
             <ShoppingCart className="w-4 h-4" />
             Add to cart
@@ -156,18 +150,19 @@ export default function AllProduct() {
   return (
     <div className="bg-white p-20">
       <section className="py-10 text-center">
-        {/* eyebrow */}
         <div className="flex items-center justify-center gap-3 text-sm font-semibold text-neutral-700">
-          <span className="h-1.5 w-5 rounded-full bg-red-500" />
+          <span className="h-1.5 w-5 rounded-full bg-gradient-to-r from-orange-600 to-amber-600" />
           <span>OUR VEHICLE FLEET</span>
         </div>
 
-        {/* heading */}
         <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900">
-          Best Choice Of <span className="text-red-500">Cars For</span> You
+          Best Choice Of{" "}
+          <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+            Cars For
+          </span>{" "}
+          You
         </h2>
 
-        {/* grid */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -182,12 +177,11 @@ export default function AllProduct() {
           </div>
         </motion.div>
 
-        {/* load more */}
         {visibleCount < cars.length && (
           <div className="flex justify-center mt-10">
             <button
               onClick={() => setVisibleCount((v) => v + 3)}
-              className="px-6 py-2 rounded-md bg-red-500 text-white hover:bg-red-600 transition"
+              className="px-6 py-2 rounded-md bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:from-orange-700 hover:to-amber-700 transition"
             >
               Load More
             </button>

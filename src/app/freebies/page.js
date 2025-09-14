@@ -2,11 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Footer from "../Footer/FooterEnd";
-import bgImageDesktop from "../assets/images/applicationp.png";
-import bgImageMobile from "../assets/images/applicationp.png";
+import FooterEnd from "../Footer/FooterEnd"
+import bgImageDesktop from "../assets/images/agreementrecraft.png";
+import bgImageMobile from "../assets/images/agreementrecraft.png";
 import Flowers from "../ShopNow/Flowers";
-import Freebies from "./freebies";
+import Freebies from "../freebies/freebies"
+import Circle from "../slider/page"
 
 const textAnimation = {
   initial: {
@@ -26,10 +27,7 @@ const textAnimation = {
 };
 
 const bookshopTitle = [
-  { char: "A" }, { char: "P" }, { char: "P" }, { char: "L" },
-  { char: "I" }, { char: "C" }, { char: "A" },
-  { char: "T" }, { char: "I" }, { char: "O" },
-  { char: "N" }, 
+
 ];
 
 export default function Page() {
@@ -47,9 +45,9 @@ export default function Page() {
         className="hidden md:block h-[100vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImageDesktop.src})` }}
       >
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+        <div className="absolute inset-0  flex items-center justify-center">
           <motion.h1
-            className="text-7xl font-bold flex text-[#97401a]"
+            className="text-7xl font-bold flex bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-500 bg-clip-text text-transparent hover:scale-110 transition-transform duration-400"
             initial="initial"
             animate={shouldAnimate ? "animate" : "initial"}
             variants={textAnimation}
@@ -72,7 +70,7 @@ export default function Page() {
       >
         <div className="absolute inset-0 bg-black/60 flex items-end justify-center p-4">
           <motion.h1
-            className="text-3xl sm:text-4xl font-bold text-[#97401a] text-center"
+            className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-500 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300"
             initial="initial"
             animate={shouldAnimate ? "animate" : "initial"}
             variants={textAnimation}
@@ -86,10 +84,10 @@ export default function Page() {
           </motion.h1>
         </div>
       </div>
-
-      <Freebies />
+<Freebies/>
       <Flowers />
-      <Footer />
+      <Circle />
+      <FooterEnd />
     </>
   );
 }

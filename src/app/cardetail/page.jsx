@@ -30,7 +30,7 @@ const featuresRight = [
 function FeatureCard({ title, desc, icon }) {
   return (
     <div className="relative group rounded-xl bg-white/90 backdrop-blur px-5 py-5 shadow-sm border border-gray-100 transition hover:shadow-md">
-      <div className="absolute -bottom-2 -left-2 h-6 w-6 rotate-45 bg-red-500 rounded-sm" />
+      <div className="absolute -bottom-2 -left-2 h-6 w-6 rotate-45 bg-[#ff3e00] rounded-sm" />
       <div className="flex items-start gap-3">
         <div className="mt-0.5 rounded-md p-2 bg-gray-100 text-gray-700">{icon}</div>
         <div>
@@ -48,8 +48,8 @@ export default function WhyChooseUsSection() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-rose-50 via-white to-transparent" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="mx-auto max-w-3xl text-center mb-8">
-          <p className="text-sm font-semibold tracking-wider text-rose-600 flex items-center justify-center gap-2">
-            <span className="inline-block h-1 w-1 rounded-full bg-rose-600" /> WHY CHOOSE US
+          <p className="text-sm font-semibold tracking-wider text-[#ff3e00] flex items-center justify-center gap-2">
+            <span className="inline-block h-1 w-1 rounded-full bg-[#ff3e00]" /> WHY CHOOSE US
           </p>
           <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-gray-900">The Advantage of Renting with Us</h2>
           <p className="mt-3 text-gray-600">

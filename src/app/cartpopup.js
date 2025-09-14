@@ -38,10 +38,12 @@ const CartPopup = () => {
     <>
       <button
         onClick={toggleCart}
-        className="fixed bottom-4 right-4 bg-[#ff3e00] text-white px-5 py-2 rounded-full z-50"
+        className="fixed bottom-4 right-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white px-5 py-2 rounded-full z-50 shadow-md transition-all hover:scale-105 hover:shadow-lg"
       >
-        Cart ({totalQty})
+        Cart({totalQty})
       </button>
+
+
 
       {isOpen && (
         <div className="fixed bottom-20 right-4 w-80 bg-white border p-4 rounded-lg shadow-lg z-50 max-h-[90vh] overflow-y-auto">
@@ -81,10 +83,11 @@ const CartPopup = () => {
 
                 <button
                   onClick={handleCheckout}
-                  className="mt-4 w-full bg-[#ff3e00] hover:bg-[#ff3e14] text-white py-2 rounded-full transition"
+                  className="mt-4 w-full bg-gradient-to-r from-orange-600 to-amber-600 text-white py-2 rounded-full shadow-md transition-all hover:scale-105 hover:shadow-lg"
                 >
                   Proceed to Checkout
                 </button>
+
               </>
             )}
           </div>

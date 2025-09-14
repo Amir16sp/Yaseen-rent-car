@@ -76,7 +76,7 @@ const BRANDS = [
         <h2 className="text-2xl sm:text-3xl font-bold text-center pt-10 text-black drop-shadow-md">
           From Budget to Luxury — Every Car for Every Need
         </h2>
-        <h1 className="text-3xl sm:text-5xl font-bold text-center pb-10 text-orange-500 drop-shadow-md">
+        <h1 className="text-4xl sm:text-5xl font-bold text-center pb-10 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
           Yaseen Rent a Car
         </h1>
 
@@ -109,7 +109,7 @@ const BRANDS = [
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Heading */}
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900">
-          Browse By <span className="text-orange-500">Categories</span> You
+          Browse By <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">Categories</span> You
         </h2>
 
         {/* Logo row */}

@@ -63,33 +63,33 @@ const ContactUs = () => {
 
             <ul className="space-y-6 text-black">
               <li className="flex items-center">
-                <FaWhatsapp className="mr-3 text-[#852b02] text-xl" />
-                +92-300-4162585
+                <FaWhatsapp className="mr-3 text-[#ff3e00] text-xl" />
+                +92-312-4378823
               </li>
               <li className="flex items-center">
-                <FaEnvelope className="mr-3 text-[#852b02] text-xl" />
-                ittefaqpaints.cc345@gmai.com
+                <FaEnvelope className="mr-3 text-[#ff3e00] text-xl" />
+              yaseenanjum831@gmail.com
               </li>
               <li className="flex items-center">
-                <FaInstagram className="mr-3 text-[#852b02] text-xl" />
+                <FaInstagram className="mr-3 text-[#ff3e00] text-xl" />
                 <a
                   href="https://www.instagram.com/thelittle_mumins/?igsh=Z2dhcWM2Nm9uanRs"
                   className="text-black hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Itefaq Paints
+                  Yaseen Rent a car
                 </a>
               </li>
               <li className="flex items-center">
-                <FaFacebookF className="mr-3 text-[#852b02] text-xl" />
+                <FaFacebookF className="mr-3 text-[#ff3e00] text-xl" />
                 <a
                   href=""
                   className="hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  facebook.com/itifaqpaints
+                  facebook.com/yaseen rent a car
                 </a>
               </li>
             </ul>
@@ -107,7 +107,7 @@ const ContactUs = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full border text-black rounded p-2 focus:outline-none focus:border-[#852b02]"
+                  className="w-full border text-black rounded p-2 focus:outline-none focus:border-[#ff3e00]"
                 />
               </div>
 
@@ -120,7 +120,7 @@ const ContactUs = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full border text-black rounded p-2 focus:outline-none focus:border-[#852b02]"
+                  className="w-full border text-black rounded p-2 focus:outline-none focus:border-[#ff3e00]"
                 />
               </div>
 
@@ -133,7 +133,7 @@ const ContactUs = () => {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full border text-black rounded p-2 focus:outline-none focus:border-[#852b02]"
+                  className="w-full border text-black rounded p-2 focus:outline-none focus:border-[#ff3e00]"
                 />
               </div>
 
@@ -146,7 +146,7 @@ const ContactUs = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#a84618] text-white font-bold py-2 px-6 rounded hover:bg-[#852b02] transition-all disabled:opacity-50"
+                className="bg-[#ff3e00] text-white font-bold py-2 px-6 rounded hover:bg-[#ff3e00] transition-all disabled:opacity-50"
               >
                 {isSubmitting ? 'Submitting...' : 'SUBMIT'}
               </button>

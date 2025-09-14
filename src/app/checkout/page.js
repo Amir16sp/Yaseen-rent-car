@@ -63,8 +63,8 @@ export default function CheckoutPage() {
   return (
     // Push the entire grid down by your nav's height (e.g. 4rem → top-16),
     // so both columns start in sync.
-    <div className="pt-28 px-6 sm:px-10 pb-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-      
+    <div className="pt-28 px-6 sm:px-10 pb-10 bg-white/40 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+
       {/* — Left: Billing Form — */}
       <div>
         <h2 className="text-2xl font-bold mb-4">Billing details</h2>
@@ -198,7 +198,7 @@ export default function CheckoutPage() {
               <span>Subtotal</span>
               <span>Rs {subtotal}</span>
             </div>
-          
+
             <div className="flex justify-between font-bold border-t pt-2 text-lg">
               <span>Total</span>
               <span>Rs {total}</span>
@@ -249,10 +249,11 @@ export default function CheckoutPage() {
 
           <button
             onClick={handlePlaceOrder}
-            className="mt-4 w-full bg-[#ff3e00] hover:bg-[#ff3e14] text-white font-bold py-2 px-4 rounded-full transition"
+            className="mt-4 w-full bg-gradient-to-r from-orange-600 to-amber-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition-all hover:scale-105 hover:shadow-lg"
           >
             PLACE ORDER
           </button>
+
         </div>
       </aside>
     </div>

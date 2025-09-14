@@ -16,14 +16,14 @@ function Loader2({ children }) {
     }
 
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 1000);
+    const timer = setTimeout(() => setLoading(false), 1500);
     return () => clearTimeout(timer);
   }, [pathname]);
 
   return (
     <>
       {loading && (
-  <div className="fixed inset-0 z-10 flex items-center justify-center bg-white/40 backdrop-blur-md">
+  <div className="fixed inset-0 z-10 flex items-center justify-center bg-white/30 backdrop-blur-md">
     <div>
       <Image
         src={LoaderImage}

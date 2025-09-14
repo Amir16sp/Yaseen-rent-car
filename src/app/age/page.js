@@ -5,8 +5,9 @@ import FooterEnd from "../Footer/FooterEnd";
 import Flowers from "../ShopNow/Flowers";
 import Circle from "../slider/page"
 import Benifit from "../age/benifit"
-import bgImageDesktop from "../assets/images/brush.jpg";
-import bgImageMobile from "../assets/images/brush.jpg";
+import bgImageDesktop from "../assets/images/aboutcar.jpg";
+import bgImageMobile from "../assets/images/aboutcar.jpg";
+
 
 // Animation config
 const textAnimation = {
@@ -27,24 +28,12 @@ const textAnimation = {
 };
 
 const bookshopTitle = [
-  { char: "B", color: "text-white-300" },
-  { char: "E", color: "text-white-300" },
-  { char: "N", color: "text-white-300" },
-  { char: "E", color: "text-white-300" },
-  { char: "F", color: "text-white-300" },
-  { char: "I", color: "text-white-300" },
-  { char: "T", color: "text-white-300" },
-  { char: "S", color: "text-white-300" },
-  { char: "", color: "text-white-300" },
-  { char: "&", color: "text-white-300" },
-  { char: "F", color: "text-white-300" },
-  { char: "E", color: "text-white-300" },
   { char: "A", color: "text-white-300" },
-  { char: "T", color: "text-white-300" },
-  { char: "U", color: "text-white-300" },
-  { char: "R", color: "text-white-300" },
-  { char: "E", color: "text-white-300" },
-  { char: "S", color: "text-white-300" },
+  { char: "b", color: "text-white-300" },
+  { char: "o", color: "text-white-300" },
+  { char: "u", color: "text-white-300" },
+  { char: "t", color: "text-white-300" },
+  
 
 ];
 
@@ -66,7 +55,7 @@ const Page = () => {
         className="hidden md:block h-[80vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImageDesktop.src})` }}
       >
-        <div className="absolute bottom-0 text-[#b5241f] flex items-center justify-center inset-0 bg-black/50">
+        <div className="absolute bottom-0 text-[#ff3e00] flex items-center justify-center inset-0 ">
           <motion.h1
             className="text-7xl font-bold flex"
             initial="initial"
@@ -92,9 +81,9 @@ const Page = () => {
         className="block md:hidden h-[50vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImageMobile.src})` }}
       >
-        <div className="absolute inset-0 bg-black/60 flex items-end justify-center p-4">
+        <div className="absolute inset-0 flex items-end justify-center p-4">
           <motion.h1
-            className="text-3xl sm:text-4xl font-bold text-[#97401a] text-center"
+            className="text-3xl sm:text-4xl font-bold text-[#ff3e00] text-center"
             initial="initial"
             animate={shouldAnimate ? "animate" : "initial"}
             variants={textAnimation}

@@ -31,22 +31,23 @@ const FooterEnd = () => {
                 />
 
                 <div className="flex space-x-3 mt-5">
-                  <Link
-                    href="https://facebook.com"
+                  
+                <Link
+                    href="https://www.facebook.com/share/19dejA5YMV/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#b5241f] text-white shadow-md transition-all hover:scale-105 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-amber-500 hover:text-black"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                   >
                     <FaFacebookF size={18} />
                   </Link>
 
                   <Link
-                    href="https://www.instagram.com/thelittle_mumins/?igsh=Z2dhcWM2Nm9uanRs"
+                    href="https://www.instagram.com/yaseenrentacar?igsh=eDA5N2Jub2J0dDI5"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#b5241f] text-white shadow-md transition-all hover:scale-105 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-amber-500 hover:text-black"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                   >
                     <FaInstagram size={18} />
                   </Link>
@@ -56,7 +57,7 @@ const FooterEnd = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#b5241f] text-white shadow-md transition-all hover:scale-105 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-amber-500 hover:text-black"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
                   >
                     <FaWhatsapp size={18} />
                   </Link>
