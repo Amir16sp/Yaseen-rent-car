@@ -42,7 +42,7 @@ export default function CheckoutPage() {
     };
 
     try {
-      const res = await fetch('http://yaseen-backend.vercel.app/api/contact', {
+      const res = await fetch('http://yaseen-backend.vercel.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
