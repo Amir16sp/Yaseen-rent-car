@@ -38,7 +38,7 @@ const cars = [
   { id: 1, tag: "Toyota Car", name: "Land Cruiser V8", image: LandCruiser, fuel: "PB", seats: 7, topSpeed: "130 mph", transmission: "Automatic", price: 30000 },
   { id: 2, tag: "Toyota Car", name: "Prado", image: Prado, fuel: "PB", seats: 7, topSpeed: "120 mph", transmission: "Automatic", price: 18000 },
   { id: 3, tag: "Toyota Car", name: "Fortuner", image: Fortuner, fuel: "PB", seats: 7, topSpeed: "115 mph", transmission: "Automatic", price: 15000 },
-  { id: 4, tag: "Toyota Car", name: "Hilux", image: Hilux, fuel: "PB", seats: 5, topSpeed: "110 mph", transmission: "Manual", price: 20000 },
+  { id: 4, tag: "Toyota Car", name: "Hilux", image: Hilux, fuel: "PB", seats: 5, topSpeed: "110 mph", transmission: "Manual", price: 18000 },
   { id: 5, tag: "Honda Car", name: "Civic", image: Civic, fuel: "PB", seats: 5, topSpeed: "124 mph", transmission: "Automatic", price: 8000 },
   { id: 6, tag: "Honda Car", name: "City", image: City, fuel: "PB", seats: 5, topSpeed: "118 mph", transmission: "Automatic", price: 5000 },
   { id: 7, tag: "Toyota Car", name: "Corolla", image: Corolla, fuel: "PB", seats: 5, topSpeed: "121 mph", transmission: "Automatic", price: 5500 },
