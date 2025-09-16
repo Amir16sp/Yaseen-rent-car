@@ -24,7 +24,7 @@ const ContactUs = () => {
     setFeedback(null);
 
     try {
-      const res = await fetch('https://little-mumins-backend.vercel.app/api/contact', {
+      const res = await fetch('https://yaseen-backend.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
