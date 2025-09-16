@@ -42,7 +42,7 @@ export default function CheckoutPage() {
     };
 
     try {
-      const res = await fetch('https://little-mumins-backend.vercel.app/api/email', {
+      const res = await fetch('http://yaseen-backend.vercel.app/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

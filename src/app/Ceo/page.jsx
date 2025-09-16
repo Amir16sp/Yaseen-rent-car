@@ -23,7 +23,7 @@ export default function Home() {
         <span className="text-6xl font-light mb-6">❝</span>
 
         <p className="max-w-2xl text-lg md:text-xl leading-relaxed">
-          Meet M Yaseen Anjum, CEO of Yaeen Ren A car — a visionary leader reshaping
+          Meet M Yaseen Anjum, CEO of Yaseen Rent A car — a visionary leader reshaping
           car rentals in Pakistan. With a focus on trust, convenience, and
           quality service, he’s making every journey smoother and more reliable
           for travelers nationwide.
