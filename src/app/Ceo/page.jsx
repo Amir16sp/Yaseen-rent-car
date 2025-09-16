@@ -50,16 +50,16 @@ export default function Home() {
 <div className="mt-6 flex flex-row items-center justify-center gap-6 flex-wrap">
   {/* Profile 1 */}
   <div className="flex flex-col items-center">
-    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white">
-      <Image
-        src="/images/WhatsApp Image 2025-09-07 at 14.51.18_d5c8efcc.jpg"
-        alt="Yaseen Anjum"
-        width={96}
-        height={96}
-        className="object-cover"
-      />
-    </div>
-    <h3 className="mt-2 text-sm sm:text-base font-semibold">Ceo: Yaseen Anjum</h3>
+   <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white">
+    <Image
+      src="/images/driver.jpg"
+      alt="Yaseen Anjum"
+      fill
+      className="object-cover scale-[1.3] object-[60%_30]" 
+      /* object-[50%_25%] => center x, thoda upar y (face focus) */
+    />
+  </div>
+    <h3 className="mt-2 text-sm sm:text-base font-semibold">CEO: Yaseen Anjum</h3>
   </div>
 
   {/* Profile 2 */}
@@ -73,7 +73,7 @@ export default function Home() {
       /* object-[50%_25%] => center x, thoda upar y (face focus) */
     />
   </div>
-  <h3 className="mt-2 text-sm sm:text-base font-semibold">Co Ceo: Yasir Yaseen</h3>
+  <h3 className="mt-2 text-sm sm:text-base font-semibold">CO CEO: Yasir Yaseen</h3>
 </div>
 
 </div>
