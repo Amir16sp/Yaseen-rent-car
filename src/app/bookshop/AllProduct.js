@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useCart } from "../context/CartContext";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaCar } from "react-icons/fa";
 import { Fuel, Users, Gauge, Cog, ArrowRight } from "lucide-react";
 
 // IMAGES
@@ -33,7 +32,7 @@ import RollsRoyce from "../assets/images/Rolls-Royce.webp";
 import GWegon from "../assets/images/Marcedes-G-Wagon.png";
 import Limo from "../assets/images/limo-ramy.png";
 
-// DATA
+// ================== DATA ==================
 const cars = [
   { id: 1, tag: "Toyota Car", name: "Land Cruiser V8", image: LandCruiser, fuel: "PB", seats: 7, topSpeed: "130 mph", transmission: "Automatic", price: 30000 },
   { id: 2, tag: "Toyota Car", name: "Prado", image: Prado, fuel: "PB", seats: 7, topSpeed: "120 mph", transmission: "Automatic", price: 18000 },
@@ -44,7 +43,7 @@ const cars = [
   { id: 7, tag: "Toyota Car", name: "Corolla", image: Corolla, fuel: "PB", seats: 5, topSpeed: "121 mph", transmission: "Automatic", price: 5500 },
   { id: 8, tag: "Toyota Car", name: "Yaris", image: Yaris, fuel: "PB", seats: 5, topSpeed: "112 mph", transmission: "Automatic", price: 5000 },
   { id: 9, tag: "Honda Car", name: "BR-V", image: BRV, fuel: "PB", seats: 7, topSpeed: "105 mph", transmission: "CVT", price: 7000 },
-  { id: 10, tag: "Hyundai Car", name: "Sonata", image: Sonata, fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 8000 },
+  { id: 10, tag: "Hyundai Car", name: "Sonata", image: Sonata, fuel: "PB", seats: 5, topSpeed: "130 mph", transmission: "Automatic", price: 10000 },
   { id: 11, tag: "KIA Car", name: "KIA Sedan", image: KIA, fuel: "PB", seats: 5, topSpeed: "120 mph", transmission: "Automatic", price: 10000 },
   { id: 12, tag: "Haval Car", name: "Haval", image: Haval, fuel: "PB", seats: 5, topSpeed: "120 mph", transmission: "Automatic", price: 13000 },
   { id: 13, tag: "Audi Car", name: "Audi", image: Audi, fuel: "PB", seats: 5, topSpeed: "150 mph", transmission: "Automatic", price: 30000 },
@@ -124,8 +123,6 @@ function VehicleCard({ item, onAdd, priority = false }) {
             RENT NOW
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#ff3e00]" />
           </button>
-
-         
         </div>
       </div>
     </div>
@@ -137,6 +134,27 @@ export default function AllProduct() {
   const [visibleCount, setVisibleCount] = useState(6); // mobile pe 6 accha lagta hai
 
   const visibleCars = cars.slice(0, visibleCount);
+
+  // normalize & send to cart so "name" ALWAYS shows
+  const handleAddToCart = (car) => {
+    addToCart({
+      id: car.id,
+      // name compatibility
+      name: car.name,
+      title: car.name,
+      // basic pricing/qty
+      price: car.price ?? 0,
+      qty: 1,
+      // optional fields
+      tag: car.tag,
+      fuel: car.fuel,
+      seats: car.seats,
+      topSpeed: car.topSpeed,
+      transmission: car.transmission,
+      // next/image imported asset -> prefer .src if present
+      image: (car.image && (car.image.src ?? car.image)) || null,
+    });
+  };
 
   return (
     <div className="bg-white px-4 sm:px-6 md:px-10 lg:px-16 py-10 md:py-14">
@@ -163,7 +181,7 @@ export default function AllProduct() {
               <VehicleCard
                 key={item.id}
                 item={item}
-                onAdd={addToCart}
+                onAdd={handleAddToCart}
                 priority={idx < 2} // first 2 images priority for LCP
               />
             ))}
