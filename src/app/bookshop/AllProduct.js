@@ -115,7 +115,7 @@ function VehicleCard({ item, onAdd, priority = false }) {
         </div>
 
         {/* Actions */}
-        {/* <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+        <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
           <button
             onClick={() => onAdd?.(item)}
             className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold text-neutral-900 hover:bg-neutral-50"
@@ -123,7 +123,7 @@ function VehicleCard({ item, onAdd, priority = false }) {
             RENT NOW
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#ff3e00]" />
           </button>
-        </div> */}
+        </div>
       </div>
     </div>
   );
